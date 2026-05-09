@@ -1,26 +1,125 @@
 @import "tailwindcss";
 
+/* ============================================
+   Deep Midnight Color Tokens
+   ============================================ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #0B0E14;
+  --bg-alt: #0F1319;
+  --bg-card: #141820;
+  --text: #E6EDF3;
+  --text-muted: #8B949E;
+  --text-dim: #3D444D;
+  --accent: #6E7BDE;
+  --accent-hover: #8F9AEF;
+  --border: rgba(139, 148, 158, 0.1);
+  --border-hover: rgba(139, 148, 158, 0.25);
+  --selection: rgba(110, 123, 222, 0.18);
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="light"] {
+  --bg: #F4F4F6;
+  --bg-alt: #EAEAEC;
+  --bg-card: #FFFFFF;
+  --text: #0B0E14;
+  --text-muted: #3D444D;
+  --text-dim: #8B949E;
+  --accent: #4A56A8;
+  --accent-hover: #3A468E;
+  --border: rgba(13, 17, 23, 0.07);
+  --border-hover: rgba(13, 17, 23, 0.18);
+  --selection: rgba(74, 86, 168, 0.1);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-bg-alt: var(--bg-alt);
+  --color-bg-card: var(--bg-card);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-text-dim: var(--text-dim);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-border: var(--border);
+  --color-border-hover: var(--border-hover);
+  --color-selection: var(--selection);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================
+   Base
+   ============================================ */
+::selection {
+  background: var(--selection);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background var(--transition), color var(--transition);
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ============================================
+   Marquee
+   ============================================ */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  animation: marquee 30s linear infinite;
+  will-change: transform;
+}
+
+/* ============================================
+   Project Name Scroll on Hover
+   ============================================ */
+@keyframes nameScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-25%); }
+}
+
+.project-name-track {
+  display: flex;
+  gap: 3rem;
+  white-space: nowrap;
+}
+
+.project-item:hover .project-name-track {
+  animation: nameScroll 3s linear infinite;
+}
+
+.project-name-track .project-name-dup {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-item:hover .project-name-track .project-name-dup {
+  opacity: 1;
+}
+
+/* Project list dim effect */
+.project-list:hover .project-item {
+  opacity: 0.25;
+  transition: opacity 0.3s ease, padding-left 0.3s ease;
+}
+
+.project-list:hover .project-item:hover {
+  opacity: 1;
+  padding-left: 1rem;
 }
