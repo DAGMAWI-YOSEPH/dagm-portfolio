@@ -7,11 +7,11 @@ import { PixelCharacter } from "./PixelCharacter";
 export function HeroSection() {
   return (
     <header className="min-h-[65vh] flex items-end pt-24 pb-16 relative">
-      {/* Falling symbols/letters */}
+      {/* Arcade shapes falling onto the name */}
       <FallingObjects />
 
       <div className="w-full relative" style={{ zIndex: 5 }}>
-        {/* Name with pixel character sitting on the Y */}
+        {/* Name with character standing on top */}
         <DropIn delay={0.1}>
           <div className="relative inline-block">
             <h1
@@ -26,12 +26,12 @@ export function HeroSection() {
             >
               DAGM. Y
             </h1>
-            {/* Pixel character drops onto the Y */}
+            {/* Character standing on top of the name */}
             <PixelCharacter />
           </div>
         </DropIn>
 
-        {/* Full name in mono */}
+        {/* Full name */}
         <DropIn delay={0.25}>
           <p
             className="mt-5"
@@ -78,7 +78,7 @@ export function HeroSection() {
                   {link.label}
                   <span
                     className="absolute bottom-0 left-0 w-0 h-px group-hover:w-full transition-all duration-300"
-                    style={{ background: "var(--accent)" }}
+                    style={{ background: "var(--retro)" }}
                   />
                 </a>
               ))}

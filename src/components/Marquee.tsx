@@ -20,7 +20,7 @@ export function Marquee() {
               textTransform: "uppercase",
               letterSpacing: "0.05em",
               color: "transparent",
-              WebkitTextStroke: "1px var(--retro-green)",
+              WebkitTextStroke: "1px var(--retro)",
             }}
           >
             ★ Selected Works ★

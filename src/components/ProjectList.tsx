@@ -91,7 +91,7 @@ export function ProjectList() {
                 style={{
                   fontFamily: "var(--font-mono), monospace",
                   fontSize: "0.7rem",
-                  color: "var(--retro-green)",
+                  color: "var(--retro)",
                   fontVariantNumeric: "tabular-nums",
                 }}
               >
@@ -125,9 +125,9 @@ export function ProjectList() {
                     className="text-[0.6rem] uppercase tracking-[0.15em] px-3 py-1 font-bold"
                     style={{
                       fontFamily: "var(--font-mono), monospace",
-                      color: "var(--retro-green)",
-                      border: "1px solid var(--retro-green)",
-                      background: "rgba(0, 255, 100, 0.05)",
+                      color: "var(--retro)",
+                      border: "1px solid var(--retro)",
+                      background: "var(--retro-glow)",
                     }}
                   >
                     {project.status}
@@ -150,7 +150,7 @@ export function ProjectList() {
                   className="opacity-0 group-hover:opacity-100 transition-all duration-300 text-lg"
                   style={{
                     fontFamily: "var(--font-mono), monospace",
-                    color: "var(--retro-green)",
+                    color: "var(--retro)",
                     transform: "translateX(-5px)",
                   }}
                 >

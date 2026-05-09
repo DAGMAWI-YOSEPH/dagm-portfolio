@@ -1,10 +1,10 @@
 export function Footer() {
   return (
     <footer
-      className="mt-32 py-8"
+      className="mt-32 py-8 w-full"
       style={{ borderTop: "2px dashed var(--border)" }}
     >
-      <div className="max-w-[1200px] mx-auto px-8 flex justify-between items-end flex-wrap gap-4">
+      <div className="px-8 flex justify-between items-end flex-wrap gap-4">
         <div className="flex flex-col gap-1">
           <span
             className="text-xs tracking-wide"
@@ -36,7 +36,7 @@ export function Footer() {
               {link.label}
               <span
                 className="absolute bottom-0 left-0 w-0 h-px group-hover:w-full transition-all duration-300"
-                style={{ background: "var(--retro-green)" }}
+                style={{ background: "var(--retro)" }}
               />
             </a>
           ))}

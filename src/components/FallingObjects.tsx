@@ -3,11 +3,9 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const SYMBOLS = [
-  "◆", "▲", "●", "■", "★", "◇", "△", "○", "□", "☆",
-  "{", "}", "<", ">", "/", "\\", "*", "#", "@", "&",
-  "A", "B", "D", "G", "M", "W", "Y", "0", "1", "7",
-  "λ", "Σ", "π", "Ω", "∞", "≡", "∴", "⌘", "⟐", "⊕",
+const SHAPES = [
+  "★", "♦", "●", "■", "▲", "♥", "◆", "✦", "○", "□",
+  "△", "☆", "✶", "◇", "♠", "✧", "●", "■", "▲", "★",
 ];
 
 interface FallingItem {
@@ -15,25 +13,31 @@ interface FallingItem {
   char: string;
   x: number;
   delay: number;
-  duration: number;
   size: number;
   rotation: number;
-  opacity: number;
+  color: string;
 }
+
+const COLORS = [
+  "var(--retro)",
+  "var(--accent)",
+  "var(--text-muted)",
+  "var(--retro)",
+  "var(--accent)",
+];
 
 export function FallingObjects() {
   const [items, setItems] = useState<FallingItem[]>([]);
 
   useEffect(() => {
-    const generated: FallingItem[] = Array.from({ length: 35 }, (_, i) => ({
+    const generated: FallingItem[] = Array.from({ length: 22 }, (_, i) => ({
       id: i,
-      char: SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)],
-      x: Math.random() * 100,
-      delay: Math.random() * 2.5,
-      duration: 1.8 + Math.random() * 2.5,
-      size: 12 + Math.random() * 28,
+      char: SHAPES[Math.floor(Math.random() * SHAPES.length)],
+      x: 5 + Math.random() * 85,
+      delay: 0.2 + Math.random() * 2,
+      size: 10 + Math.random() * 20,
       rotation: -180 + Math.random() * 360,
-      opacity: 0.08 + Math.random() * 0.18,
+      color: COLORS[Math.floor(Math.random() * COLORS.length)],
     }));
     setItems(generated);
   }, []);
@@ -41,38 +45,35 @@ export function FallingObjects() {
   if (!items.length) return null;
 
   return (
-    <div
-      className="absolute inset-0 overflow-hidden pointer-events-none"
-      style={{ zIndex: 1 }}
-    >
+    <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 2 }}>
       {items.map((item) => (
         <motion.span
           key={item.id}
-          initial={{
-            opacity: 0,
-            y: -80,
-            x: `${item.x}vw`,
-            rotate: 0,
-            scale: 0.5,
-          }}
+          initial={{ opacity: 0, y: -100, rotate: 0 }}
           animate={{
-            opacity: [0, item.opacity, item.opacity, item.opacity * 0.3],
-            y: ["−80px", "75vh", "78vh", "75vh"],
+            opacity: [0, 0.35, 0.25],
+            y: ["-100px", "calc(100% - 2rem)", "calc(100% - 2.5rem)", "calc(100% - 2rem)"],
             rotate: item.rotation,
-            scale: [0.5, 1, 1, 0.9],
           }}
           transition={{
-            duration: item.duration,
+            duration: 1.6,
             delay: item.delay,
-            ease: [0.25, 0.46, 0.45, 0.94],
+            ease: [0.45, 0, 0.55, 1],
+            y: {
+              duration: 1.6,
+              delay: item.delay,
+              times: [0, 0.7, 0.85, 1],
+              ease: [0.6, 0, 0.4, 1],
+            },
           }}
-          className="absolute top-0 select-none"
+          className="absolute"
           style={{
-            fontFamily: "var(--font-mono), monospace",
+            left: `${item.x}%`,
+            top: 0,
             fontSize: `${item.size}px`,
-            fontWeight: 700,
-            color: "var(--text)",
+            color: item.color,
             willChange: "transform, opacity",
+            lineHeight: 1,
           }}
         >
           {item.char}

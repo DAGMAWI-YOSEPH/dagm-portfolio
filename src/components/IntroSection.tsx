@@ -23,9 +23,9 @@ export function IntroSection() {
         </p>
         <Link
           href="/about"
-          className="inline-flex items-center gap-2 text-sm tracking-[0.08em] uppercase group retro-cursor"
+          className="inline-flex items-center gap-2 text-sm tracking-[0.08em] uppercase group"
           style={{
-            color: "var(--retro-green)",
+            color: "var(--retro)",
             fontFamily: "var(--font-mono), monospace",
             transition: "color 0.3s ease",
           }}

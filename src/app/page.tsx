@@ -13,9 +13,7 @@ export default function Home() {
           <WorksSection />
         </div>
       </main>
-      <div className="max-w-[1200px] mx-auto px-8">
-        <Footer />
-      </div>
+      <Footer />
     </>
   );
 }
