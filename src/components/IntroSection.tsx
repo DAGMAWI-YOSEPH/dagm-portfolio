@@ -23,14 +23,16 @@ export function IntroSection() {
         </p>
         <Link
           href="/about"
-          className="inline-flex items-center gap-2 text-sm tracking-[0.08em] uppercase group"
-          style={{ color: "var(--text-dim)", transition: "color 0.3s ease" }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text)")}
-          onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-dim)")}
+          className="inline-flex items-center gap-2 text-sm tracking-[0.08em] uppercase group retro-cursor"
+          style={{
+            color: "var(--retro-green)",
+            fontFamily: "var(--font-mono), monospace",
+            transition: "color 0.3s ease",
+          }}
         >
-          About
+          about
           <span className="text-base transition-transform duration-300 group-hover:translate-x-1.5">
-            →
+            {">"}
           </span>
         </Link>
       </section>

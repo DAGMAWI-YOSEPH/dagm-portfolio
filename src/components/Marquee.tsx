@@ -5,8 +5,8 @@ export function Marquee() {
 
   return (
     <div
-      className="overflow-hidden py-4"
-      style={{ borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}
+      className="overflow-hidden py-5"
+      style={{ borderTop: "2px dashed var(--border)", borderBottom: "2px dashed var(--border)" }}
     >
       <div className="marquee-track">
         {items.map((_, i) => (
@@ -14,16 +14,16 @@ export function Marquee() {
             key={i}
             className="flex-shrink-0 pr-12 select-none"
             style={{
-              fontFamily: "var(--font-inter), sans-serif",
-              fontSize: "clamp(2.5rem, 6vw, 5rem)",
-              fontWeight: 900,
+              fontFamily: "var(--font-mono), monospace",
+              fontSize: "clamp(2rem, 5vw, 4rem)",
+              fontWeight: 700,
               textTransform: "uppercase",
-              letterSpacing: "-0.03em",
+              letterSpacing: "0.05em",
               color: "transparent",
-              WebkitTextStroke: "1px var(--text-dim)",
+              WebkitTextStroke: "1px var(--retro-green)",
             }}
           >
-            Selected Works
+            ★ Selected Works ★
           </span>
         ))}
       </div>

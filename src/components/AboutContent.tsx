@@ -21,9 +21,9 @@ const skills = [
 const experience = [
   { name: "Heron Dance", year: "Ongoing", url: "https://www.herondance.org/" },
   { name: "JBDondolo.org", year: "Ongoing", url: "https://jbdondolo.org/" },
-  { name: "Lonestar Peptides", year: "2026", url: "https://lonestarpeptides.com/" },
+  { name: "Lonestar Peptides", year: "2026", url: "https://lonestarpeptides.org/" },
   { name: "True Light Pools", year: "2026", url: "https://truelightpools.com/" },
-  { name: "BPS Pools", year: "2026", url: "https://bpspools.com/" },
+  { name: "BPS Pools", year: "2026", url: "https://bpspools.net/" },
   { name: "The Arch International", year: "2025", url: "https://thearchinternational.com/" },
   { name: "Rose Bookshop", year: "2024", url: "https://rosebookshop.com/" },
 ];

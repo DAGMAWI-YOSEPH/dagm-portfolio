@@ -21,7 +21,7 @@ const projects = [
     number: "003",
     name: "Lonestar Peptides",
     year: "2026",
-    url: "https://lonestarpeptides.com/",
+    url: "https://lonestarpeptides.org/",
     status: "",
   },
   {
@@ -35,7 +35,7 @@ const projects = [
     number: "005",
     name: "BPS Pools",
     year: "2026",
-    url: "https://bpspools.com/",
+    url: "https://bpspools.net/",
     status: "",
   },
   {
@@ -66,8 +66,8 @@ export function ProjectList() {
         return (
           <motion.div
             key={project.number}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-30px" }}
             transition={{
               duration: 0.5,
@@ -77,18 +77,23 @@ export function ProjectList() {
           >
             <Tag
               {...linkProps}
-              className="project-item grid items-center py-5 cursor-pointer"
+              className="project-item grid items-center py-5 cursor-pointer group"
               style={{
                 gridTemplateColumns: "3.5rem 1fr auto",
-                borderBottom: "1px solid var(--border)",
+                borderBottom: "2px dashed var(--border)",
                 transition: "all 0.3s ease",
-                ...(i === 0 ? { borderTop: "1px solid var(--border)" } : {}),
+                ...(i === 0 ? { borderTop: "2px dashed var(--border)" } : {}),
               }}
             >
-              {/* Number */}
+              {/* Number — retro pixel style */}
               <span
-                className="text-xs font-medium tracking-widest"
-                style={{ color: "var(--text-dim)", fontVariantNumeric: "tabular-nums" }}
+                className="font-bold tracking-widest"
+                style={{
+                  fontFamily: "var(--font-mono), monospace",
+                  fontSize: "0.7rem",
+                  color: "var(--retro-green)",
+                  fontVariantNumeric: "tabular-nums",
+                }}
               >
                 {project.number}
               </span>
@@ -96,25 +101,20 @@ export function ProjectList() {
               {/* Name with marquee track */}
               <div className="overflow-hidden">
                 <div className="project-name-track">
-                  <span
-                    className="flex-shrink-0"
-                    style={{
-                      fontSize: "clamp(1.3rem, 3.2vw, 2.2rem)",
-                      fontWeight: 700,
-                      letterSpacing: "-0.02em",
-                    }}
-                  >
-                    {project.name}
-                  </span>
-                  <span className="flex-shrink-0 project-name-dup" style={{ fontSize: "clamp(1.3rem, 3.2vw, 2.2rem)", fontWeight: 700, letterSpacing: "-0.02em" }}>
-                    {project.name}
-                  </span>
-                  <span className="flex-shrink-0 project-name-dup" style={{ fontSize: "clamp(1.3rem, 3.2vw, 2.2rem)", fontWeight: 700, letterSpacing: "-0.02em" }}>
-                    {project.name}
-                  </span>
-                  <span className="flex-shrink-0 project-name-dup" style={{ fontSize: "clamp(1.3rem, 3.2vw, 2.2rem)", fontWeight: 700, letterSpacing: "-0.02em" }}>
-                    {project.name}
-                  </span>
+                  {[0, 1, 2, 3].map((j) => (
+                    <span
+                      key={j}
+                      className={`flex-shrink-0 ${j > 0 ? "project-name-dup" : ""}`}
+                      style={{
+                        fontFamily: "var(--font-grotesk), sans-serif",
+                        fontSize: "clamp(1.3rem, 3.2vw, 2.2rem)",
+                        fontWeight: 700,
+                        letterSpacing: "-0.02em",
+                      }}
+                    >
+                      {project.name}
+                    </span>
+                  ))}
                 </div>
               </div>
 
@@ -122,24 +122,39 @@ export function ProjectList() {
               <div className="flex items-center gap-4 justify-self-end">
                 {project.status && (
                   <span
-                    className="text-[0.65rem] uppercase tracking-[0.12em] px-3 py-1 rounded-full"
+                    className="text-[0.6rem] uppercase tracking-[0.15em] px-3 py-1 font-bold"
                     style={{
-                      color: "var(--accent)",
-                      background: "var(--selection)",
+                      fontFamily: "var(--font-mono), monospace",
+                      color: "var(--retro-green)",
+                      border: "1px solid var(--retro-green)",
+                      background: "rgba(0, 255, 100, 0.05)",
                     }}
                   >
                     {project.status}
                   </span>
                 )}
                 <span
-                  className="text-sm tracking-wide"
+                  className="text-sm tracking-wide font-bold"
                   style={{
+                    fontFamily: "var(--font-mono), monospace",
                     color: "var(--text-dim)",
                     fontVariantNumeric: "tabular-nums",
                     transition: "color 0.3s ease",
                   }}
                 >
                   {project.year}
+                </span>
+
+                {/* Retro arrow */}
+                <span
+                  className="opacity-0 group-hover:opacity-100 transition-all duration-300 text-lg"
+                  style={{
+                    fontFamily: "var(--font-mono), monospace",
+                    color: "var(--retro-green)",
+                    transform: "translateX(-5px)",
+                  }}
+                >
+                  {">"}
                 </span>
               </div>
             </Tag>

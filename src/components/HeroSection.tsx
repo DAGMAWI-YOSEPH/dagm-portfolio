@@ -1,48 +1,60 @@
 "use client";
 
 import { DropIn } from "./DropIn";
+import { FallingObjects } from "./FallingObjects";
+import { PixelCharacter } from "./PixelCharacter";
 
 export function HeroSection() {
   return (
-    <header className="min-h-[60vh] flex items-end pt-24 pb-16">
-      <div className="w-full">
-        {/* Name */}
+    <header className="min-h-[65vh] flex items-end pt-24 pb-16 relative">
+      {/* Falling symbols/letters */}
+      <FallingObjects />
+
+      <div className="w-full relative" style={{ zIndex: 5 }}>
+        {/* Name with pixel character sitting on the Y */}
         <DropIn delay={0.1}>
-          <h1
-            style={{
-              fontSize: "clamp(5rem, 14vw, 13rem)",
-              fontWeight: 900,
-              lineHeight: 0.85,
-              letterSpacing: "-0.05em",
-              textTransform: "uppercase",
-            }}
-          >
-            DAGM. Y
-          </h1>
+          <div className="relative inline-block">
+            <h1
+              style={{
+                fontFamily: "var(--font-grotesk), sans-serif",
+                fontSize: "clamp(5rem, 14vw, 13rem)",
+                fontWeight: 700,
+                lineHeight: 0.85,
+                letterSpacing: "-0.06em",
+                textTransform: "uppercase",
+              }}
+            >
+              DAGM. Y
+            </h1>
+            {/* Pixel character drops onto the Y */}
+            <PixelCharacter />
+          </div>
         </DropIn>
 
-        {/* Full name */}
+        {/* Full name in mono */}
         <DropIn delay={0.25}>
           <p
-            className="mt-4"
+            className="mt-5"
             style={{
-              fontFamily: "var(--font-playfair), Georgia, serif",
-              fontSize: "1.15rem",
-              fontStyle: "italic",
+              fontFamily: "var(--font-mono), monospace",
+              fontSize: "0.95rem",
               color: "var(--text-muted)",
-              letterSpacing: "0.02em",
+              letterSpacing: "0.05em",
             }}
           >
             Dagmawi Yoseph
           </p>
         </DropIn>
 
-        {/* Bottom row: location left, social right */}
+        {/* Bottom row */}
         <DropIn delay={0.4} className="mt-12">
           <div className="flex justify-between items-start flex-wrap gap-4">
             <span
               className="text-xs tracking-[0.12em] uppercase"
-              style={{ color: "var(--text-dim)" }}
+              style={{
+                color: "var(--text-dim)",
+                fontFamily: "var(--font-mono), monospace",
+              }}
             >
               Addis Ababa, Ethiopia
             </span>
@@ -58,7 +70,10 @@ export function HeroSection() {
                   target={link.href.startsWith("mailto") ? undefined : "_blank"}
                   rel={link.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
                   className="text-xs tracking-[0.06em] lowercase relative pb-0.5 group"
-                  style={{ color: "var(--text-dim)" }}
+                  style={{
+                    color: "var(--text-dim)",
+                    fontFamily: "var(--font-mono), monospace",
+                  }}
                 >
                   {link.label}
                   <span

@@ -1,20 +1,19 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Space_Grotesk, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
-const inter = Inter({
-  variable: "--font-inter",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-grotesk",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const spaceMono = Space_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
   weight: ["400", "700"],
-  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -29,10 +28,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${spaceGrotesk.variable} ${spaceMono.variable}`} suppressHydrationWarning>
       <body
         className="min-h-screen flex flex-col"
-        style={{ fontFamily: "var(--font-inter), sans-serif" }}
+        style={{ fontFamily: "var(--font-grotesk), sans-serif" }}
       >
         <ThemeProvider>
           <ThemeToggle />

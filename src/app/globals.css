@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ============================================
-   Deep Midnight Color Tokens
+   Deep Midnight + Retro Color Tokens
    ============================================ */
 :root {
   --bg: #0B0E14;
@@ -15,6 +15,10 @@
   --border: rgba(139, 148, 158, 0.1);
   --border-hover: rgba(139, 148, 158, 0.25);
   --selection: rgba(110, 123, 222, 0.18);
+  --retro-green: #39FF6E;
+  --retro-amber: #FFB830;
+  --retro-pink: #FF6EC7;
+  --retro-cyan: #00F0FF;
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -30,6 +34,10 @@
   --border: rgba(13, 17, 23, 0.07);
   --border-hover: rgba(13, 17, 23, 0.18);
   --selection: rgba(74, 86, 168, 0.1);
+  --retro-green: #1B8A3A;
+  --retro-amber: #B07800;
+  --retro-pink: #C4388A;
+  --retro-cyan: #007A82;
 }
 
 @theme inline {
@@ -60,7 +68,6 @@ html {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background var(--transition), color var(--transition);
@@ -82,7 +89,7 @@ a {
 
 .marquee-track {
   display: flex;
-  animation: marquee 30s linear infinite;
+  animation: marquee 25s linear infinite;
   will-change: transform;
 }
 
@@ -122,4 +129,52 @@ a {
 .project-list:hover .project-item:hover {
   opacity: 1;
   padding-left: 1rem;
+}
+
+/* Retro hover glow */
+.project-item:hover {
+  text-shadow: 0 0 20px rgba(57, 255, 110, 0.15);
+}
+
+[data-theme="light"] .project-item:hover {
+  text-shadow: none;
+}
+
+/* ============================================
+   Retro scanline overlay (subtle)
+   ============================================ */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  opacity: 0.4;
+}
+
+[data-theme="light"] body::after {
+  opacity: 0.15;
+}
+
+/* ============================================
+   Retro cursor blink for mono text
+   ============================================ */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.retro-cursor::after {
+  content: "█";
+  animation: blink 1s step-end infinite;
+  color: var(--retro-green);
+  margin-left: 2px;
+  font-size: 0.8em;
 }
