@@ -2,36 +2,30 @@
 
 import { DropIn } from "./DropIn";
 import { FallingObjects } from "./FallingObjects";
-import { PixelCharacter } from "./PixelCharacter";
 
 export function HeroSection() {
   return (
     <header className="min-h-[65vh] flex items-end pt-24 pb-16 relative">
-      {/* Arcade shapes falling onto the name */}
       <FallingObjects />
 
       <div className="w-full relative" style={{ zIndex: 5 }}>
-        {/* Name with character standing on top */}
         <DropIn delay={0.1}>
-          <div className="relative inline-block">
+          <div className="relative inline-block" id="hero-name">
             <h1
               style={{
-                fontFamily: "var(--font-grotesk), sans-serif",
-                fontSize: "clamp(5rem, 14vw, 13rem)",
-                fontWeight: 700,
-                lineHeight: 0.85,
-                letterSpacing: "-0.06em",
+                fontFamily: "var(--font-display), var(--font-grotesk), sans-serif",
+                fontSize: "clamp(5.5rem, 16vw, 15rem)",
+                fontWeight: 400,
+                lineHeight: 0.9,
+                letterSpacing: "0.02em",
                 textTransform: "uppercase",
               }}
             >
               DAGM. Y
             </h1>
-            {/* Character standing on top of the name */}
-            <PixelCharacter />
           </div>
         </DropIn>
 
-        {/* Full name */}
         <DropIn delay={0.25}>
           <p
             className="mt-5"
@@ -46,7 +40,6 @@ export function HeroSection() {
           </p>
         </DropIn>
 
-        {/* Bottom row */}
         <DropIn delay={0.4} className="mt-12">
           <div className="flex justify-between items-start flex-wrap gap-4">
             <span

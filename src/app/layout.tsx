@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Space_Mono } from "next/font/google";
+import { Space_Grotesk, Space_Mono, Bebas_Neue } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { GlobalCharacter } from "@/components/GlobalCharacter";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-grotesk",
@@ -14,6 +16,12 @@ const spaceMono = Space_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
   weight: ["400", "700"],
+});
+
+const bebasNeue = Bebas_Neue({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -28,14 +36,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${spaceMono.variable}`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${spaceGrotesk.variable} ${spaceMono.variable} ${bebasNeue.variable}`}
+      suppressHydrationWarning
+    >
       <body
         className="min-h-screen flex flex-col"
         style={{ fontFamily: "var(--font-grotesk), sans-serif" }}
       >
         <ThemeProvider>
           <ThemeToggle />
+          <GlobalCharacter />
           {children}
+          <ScrollToTop />
         </ThemeProvider>
       </body>
     </html>
