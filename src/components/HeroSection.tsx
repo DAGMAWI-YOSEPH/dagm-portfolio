@@ -12,9 +12,10 @@ export function HeroSection() {
         <DropIn delay={0.1}>
           <div className="relative inline-block" id="hero-name">
             <h1
+              className="whitespace-nowrap"
               style={{
                 fontFamily: "var(--font-grotesk), sans-serif",
-                fontSize: "clamp(5.5rem, 16vw, 15rem)",
+                fontSize: "clamp(3rem, 16vw, 15rem)",
                 fontWeight: 400,
                 lineHeight: 0.9,
                 letterSpacing: "0.02em",
