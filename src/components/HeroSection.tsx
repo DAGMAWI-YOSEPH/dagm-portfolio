@@ -13,7 +13,7 @@ export function HeroSection() {
           <div className="relative inline-block" id="hero-name">
             <h1
               style={{
-                fontFamily: "var(--font-display), var(--font-grotesk), sans-serif",
+                fontFamily: "var(--font-grotesk), sans-serif",
                 fontSize: "clamp(5.5rem, 16vw, 15rem)",
                 fontWeight: 400,
                 lineHeight: 0.9,
