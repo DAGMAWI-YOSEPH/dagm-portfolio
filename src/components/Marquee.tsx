@@ -1,29 +1,30 @@
 "use client";
 
 export function Marquee() {
-  const items = Array.from({ length: 10 });
+  const items = Array.from({ length: 12 });
 
   return (
     <div
-      className="overflow-hidden py-5"
+      className="overflow-hidden py-4"
       style={{ borderTop: "2px dashed var(--border)", borderBottom: "2px dashed var(--border)" }}
     >
-      <div className="marquee-track">
+      <div className="marquee-track" style={{ "--marquee-speed": "10s" } as React.CSSProperties}>
         {items.map((_, i) => (
           <span
             key={i}
-            className="flex-shrink-0 pr-12 select-none"
+            className="flex-shrink-0 pr-10 select-none"
             style={{
               fontFamily: "var(--font-mono), monospace",
-              fontSize: "clamp(2rem, 5vw, 4rem)",
+              fontSize: "clamp(1.8rem, 4.5vw, 3.5rem)",
               fontWeight: 700,
               textTransform: "uppercase",
-              letterSpacing: "0.05em",
-              color: "transparent",
-              WebkitTextStroke: "1px var(--retro)",
+              letterSpacing: "0.08em",
+              color: "#FFFFFF",
+              textShadow: "2px 2px 0px rgba(0,0,0,0.3)",
+              imageRendering: "pixelated" as React.CSSProperties["imageRendering"],
             }}
           >
-            ★ Selected Works ★
+            ★ SELECTED WORKS ★
           </span>
         ))}
       </div>

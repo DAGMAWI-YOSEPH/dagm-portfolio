@@ -15,9 +15,9 @@
   --border: rgba(139, 148, 158, 0.1);
   --border-hover: rgba(139, 148, 158, 0.25);
   --selection: rgba(110, 123, 222, 0.18);
-  --retro: #E8A838;
-  --retro-hover: #F0BC5C;
-  --retro-glow: rgba(232, 168, 56, 0.15);
+  --retro: #D4785A;
+  --retro-hover: #E08A6C;
+  --retro-glow: rgba(212, 120, 90, 0.15);
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -33,9 +33,9 @@
   --border: rgba(13, 17, 23, 0.07);
   --border-hover: rgba(13, 17, 23, 0.18);
   --selection: rgba(74, 86, 168, 0.1);
-  --retro: #B87A1A;
-  --retro-hover: #9A6510;
-  --retro-glow: rgba(184, 122, 26, 0.1);
+  --retro: #B8563F;
+  --retro-hover: #9E4832;
+  --retro-glow: rgba(184, 86, 63, 0.1);
 }
 
 @theme inline {
@@ -87,7 +87,7 @@ a {
 
 .marquee-track {
   display: flex;
-  animation: marquee 25s linear infinite;
+  animation: marquee var(--marquee-speed, 25s) linear infinite;
   will-change: transform;
 }
 
