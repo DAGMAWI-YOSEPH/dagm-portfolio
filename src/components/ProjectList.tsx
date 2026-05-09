@@ -118,9 +118,9 @@ export function ProjectList() {
                 </div>
               </div>
 
-              {/* Right: status + year */}
+              {/* Right: status badge OR year (not both for ongoing) */}
               <div className="flex items-center gap-4 justify-self-end">
-                {project.status && (
+                {project.status ? (
                   <span
                     className="text-[0.6rem] uppercase tracking-[0.15em] px-3 py-1 font-bold"
                     style={{
@@ -132,18 +132,19 @@ export function ProjectList() {
                   >
                     {project.status}
                   </span>
+                ) : (
+                  <span
+                    className="text-sm tracking-wide font-bold"
+                    style={{
+                      fontFamily: "var(--font-mono), monospace",
+                      color: "var(--text-dim)",
+                      fontVariantNumeric: "tabular-nums",
+                      transition: "color 0.3s ease",
+                    }}
+                  >
+                    {project.year}
+                  </span>
                 )}
-                <span
-                  className="text-sm tracking-wide font-bold"
-                  style={{
-                    fontFamily: "var(--font-mono), monospace",
-                    color: "var(--text-dim)",
-                    fontVariantNumeric: "tabular-nums",
-                    transition: "color 0.3s ease",
-                  }}
-                >
-                  {project.year}
-                </span>
 
                 {/* Retro arrow */}
                 <span
