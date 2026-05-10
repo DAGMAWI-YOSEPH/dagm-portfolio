@@ -42,11 +42,13 @@ export function AboutContent() {
         <h1
           className="mb-20"
           style={{
+            fontFamily: "var(--font-display), var(--font-grotesk), sans-serif",
             fontSize: "clamp(3rem, 8vw, 7rem)",
             fontWeight: 900,
             lineHeight: 0.9,
-            letterSpacing: "-0.05em",
+            letterSpacing: "0.04em",
             textTransform: "uppercase",
+            textShadow: "0 0 30px rgba(0, 240, 255, 0.15)",
           }}
         >
           About

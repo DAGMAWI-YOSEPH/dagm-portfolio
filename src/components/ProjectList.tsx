@@ -80,9 +80,9 @@ export function ProjectList() {
               className="project-item grid items-center py-5 cursor-pointer group"
               style={{
                 gridTemplateColumns: "3.5rem 1fr auto",
-                borderBottom: "2px dashed var(--border)",
+                borderBottom: "1px solid rgba(0, 240, 255, 0.06)",
                 transition: "all 0.3s ease",
-                ...(i === 0 ? { borderTop: "2px dashed var(--border)" } : {}),
+                ...(i === 0 ? { borderTop: "1px solid rgba(0, 240, 255, 0.06)" } : {}),
               }}
             >
               {/* Number — retro pixel style */}
@@ -91,8 +91,9 @@ export function ProjectList() {
                 style={{
                   fontFamily: "var(--font-mono), monospace",
                   fontSize: "0.7rem",
-                  color: "var(--retro)",
+                  color: "var(--accent)",
                   fontVariantNumeric: "tabular-nums",
+                  textShadow: "0 0 8px rgba(0, 240, 255, 0.3)",
                 }}
               >
                 {project.number}

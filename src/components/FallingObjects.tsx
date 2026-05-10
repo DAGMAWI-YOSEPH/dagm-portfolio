@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const SHAPES = [
-  "★", "♦", "●", "■", "▲", "♥", "◆", "✦", "☆", "✶",
-  "◇", "♠", "✧", "△", "○", "□",
+  "⬡", "◈", "⟁", "⌬", "◇", "⬢", "△", "▽", "◻", "⟐",
+  "⧫", "⬣", "▣", "◆", "⟠", "⏣",
 ];
 
 interface FallingItem {
@@ -19,12 +19,12 @@ interface FallingItem {
 }
 
 const COLORS = [
-  "var(--retro)",
-  "var(--accent)",
-  "var(--text-muted)",
-  "var(--retro)",
   "var(--accent)",
   "var(--retro)",
+  "var(--accent)",
+  "rgba(0, 240, 255, 0.6)",
+  "rgba(255, 46, 151, 0.5)",
+  "var(--accent)",
 ];
 
 export function FallingObjects() {
@@ -70,6 +70,7 @@ export function FallingObjects() {
             color: item.color,
             willChange: "transform, opacity",
             lineHeight: 1,
+            filter: `drop-shadow(0 0 4px ${item.color})`,
           }}
         >
           {item.char}

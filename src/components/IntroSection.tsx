@@ -25,14 +25,16 @@ export function IntroSection() {
           href="/about"
           className="inline-flex items-center gap-2 text-sm tracking-[0.08em] uppercase group"
           style={{
-            color: "var(--retro)",
+            color: "var(--accent)",
             fontFamily: "var(--font-mono), monospace",
-            transition: "color 0.3s ease",
+            transition: "all 0.3s ease",
+            textShadow: "0 0 10px rgba(0, 240, 255, 0.2)",
           }}
         >
+          <span style={{ opacity: 0.5 }}>{">"}</span>
           about
           <span className="text-base transition-transform duration-300 group-hover:translate-x-1.5">
-            {">"}
+            {"→"}
           </span>
         </Link>
       </section>

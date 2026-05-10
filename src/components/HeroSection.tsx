@@ -5,7 +5,7 @@ import { FallingObjects } from "./FallingObjects";
 
 export function HeroSection() {
   return (
-    <header className="min-h-[65vh] flex items-end pt-24 pb-16 relative">
+    <header className="min-h-[65vh] flex items-end pt-24 pb-16 relative cyber-grid">
       <FallingObjects />
 
       <div className="w-full relative" style={{ zIndex: 5 }}>
@@ -20,6 +20,7 @@ export function HeroSection() {
                 lineHeight: 0.9,
                 letterSpacing: "0.04em",
                 textTransform: "uppercase",
+                textShadow: "0 0 30px rgba(0, 240, 255, 0.15), 0 0 60px rgba(0, 240, 255, 0.05)",
               }}
             >
               DAGM. Y
@@ -37,6 +38,7 @@ export function HeroSection() {
               letterSpacing: "0.05em",
             }}
           >
+            <span style={{ color: "var(--accent)", opacity: 0.6 }}>{"// "}</span>
             Dagmawi Yoseph
           </p>
         </DropIn>
@@ -50,7 +52,7 @@ export function HeroSection() {
                 fontFamily: "var(--font-mono), monospace",
               }}
             >
-              Addis Ababa, Ethiopia
+              <span style={{ color: "var(--accent)", opacity: 0.4 }}>◈</span> Addis Ababa, Ethiopia
             </span>
             <nav className="flex gap-8 items-center">
               {[
@@ -72,7 +74,7 @@ export function HeroSection() {
                   {link.label}
                   <span
                     className="absolute bottom-0 left-0 w-0 h-px group-hover:w-full transition-all duration-300"
-                    style={{ background: "var(--retro)" }}
+                    style={{ background: "var(--accent)" }}
                   />
                 </a>
               ))}

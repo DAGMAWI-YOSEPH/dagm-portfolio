@@ -9,20 +9,10 @@ export function ThemeToggle() {
     <button
       onClick={toggle}
       aria-label="Toggle dark/light mode"
-      className="fixed top-6 right-6 z-50 w-10 h-10 rounded-full flex items-center justify-center cursor-pointer"
+      className="fixed top-6 right-6 z-50 w-10 h-10 rounded-full flex items-center justify-center cursor-pointer neon-border"
       style={{
-        border: "1px solid var(--border)",
         background: "transparent",
-        color: "var(--text-muted)",
-        transition: "all 0.3s ease",
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.borderColor = "var(--text)";
-        e.currentTarget.style.color = "var(--text)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.borderColor = "var(--border)";
-        e.currentTarget.style.color = "var(--text-muted)";
+        color: "var(--accent)",
       }}
     >
       {theme === "dark" ? (
