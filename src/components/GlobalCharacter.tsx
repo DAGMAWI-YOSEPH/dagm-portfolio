@@ -66,16 +66,16 @@ function WalkingCharacterSVG({ scale = 1 }: { scale?: number }) {
       {/* Head */}
       <rect x="3" y="1.7" width="8" height="3.3" fill="#6B4226" />
       <rect x="4" y="5" width="6" height="0.8" fill="#6B4226" />
-      {/* Cyber visor (replaces glasses) */}
-      <rect x="2.8" y="2.6" width="8.4" height="1.8" fill="rgba(0, 240, 255, 0.15)" stroke="#00F0FF" strokeWidth="0.3" rx="0.3" />
-      <rect x="3.2" y="2.9" width="3.2" height="1.2" fill="rgba(0, 240, 255, 0.1)" />
-      <rect x="7.6" y="2.9" width="3.2" height="1.2" fill="rgba(0, 240, 255, 0.1)" />
-      <rect x="6.4" y="3.3" width="1.2" height="0.3" fill="#00F0FF" opacity="0.6" />
-      {/* Visor glow line */}
-      <rect x="2.8" y="3.4" width="8.4" height="0.15" fill="#00F0FF" opacity="0.5" />
-      {/* Eyes behind visor */}
-      <rect x="4" y="3.1" width="1.4" height="0.9" fill="rgba(255,255,255,0.8)" />
-      <rect x="4.4" y="3.2" width="0.7" height="0.7" fill="#FF2E97" />
+      {/* One-eye cyber monocle (right eye) */}
+      <rect x="7.5" y="2.5" width="3.8" height="2" fill="rgba(0, 240, 255, 0.12)" stroke="#00F0FF" strokeWidth="0.35" rx="0.3" />
+      <rect x="7.5" y="3.4" width="3.8" height="0.15" fill="#00F0FF" opacity="0.5" />
+      {/* Monocle arm */}
+      <rect x="6.2" y="3.3" width="1.3" height="0.3" fill="#00F0FF" opacity="0.4" />
+      <rect x="11.3" y="3" width="0.5" height="1.2" fill="#00F0FF" opacity="0.3" />
+      {/* Left eye (bare) */}
+      <rect x="4" y="3.1" width="1.4" height="0.9" fill="#FFF" />
+      <rect x="4.4" y="3.2" width="0.7" height="0.7" fill="#1A1A1A" />
+      {/* Right eye (behind monocle, glowing) */}
       <rect x="8.6" y="3.1" width="1.4" height="0.9" fill="rgba(255,255,255,0.8)" />
       <rect x="9" y="3.2" width="0.7" height="0.7" fill="#FF2E97" />
       {/* Mouth */}
@@ -155,13 +155,15 @@ function SittingCharacterSVG({ scale = 1, eyeOffsetX = 0, waving = false }: { sc
       {/* Head */}
       <rect x="3" y="1.7" width="8" height="3.3" fill="#6B4226" />
       <rect x="4" y="5" width="6" height="0.8" fill="#6B4226" />
-      {/* Cyber visor */}
-      <rect x="2.8" y="2.6" width="8.4" height="1.8" fill="rgba(0, 240, 255, 0.15)" stroke="#00F0FF" strokeWidth="0.3" rx="0.3" />
-      <rect x="6.4" y="3.3" width="1.2" height="0.3" fill="#00F0FF" opacity="0.6" />
-      <rect x="2.8" y="3.4" width="8.4" height="0.15" fill="#00F0FF" opacity="0.5" />
-      {/* Eyes tracking mouse */}
-      <rect x="4" y="3.1" width="1.4" height="0.9" fill="rgba(255,255,255,0.8)" />
-      <rect x={4.2 + eyeOffsetX * 0.5} y="3.2" width="0.7" height="0.7" fill="#FF2E97" />
+      {/* One-eye cyber monocle (right eye) */}
+      <rect x="7.5" y="2.5" width="3.8" height="2" fill="rgba(0, 240, 255, 0.12)" stroke="#00F0FF" strokeWidth="0.35" rx="0.3" />
+      <rect x="7.5" y="3.4" width="3.8" height="0.15" fill="#00F0FF" opacity="0.5" />
+      <rect x="6.2" y="3.3" width="1.3" height="0.3" fill="#00F0FF" opacity="0.4" />
+      <rect x="11.3" y="3" width="0.5" height="1.2" fill="#00F0FF" opacity="0.3" />
+      {/* Left eye (bare, tracking mouse) */}
+      <rect x="4" y="3.1" width="1.4" height="0.9" fill="#FFF" />
+      <rect x={4.2 + eyeOffsetX * 0.5} y="3.2" width="0.7" height="0.7" fill="#1A1A1A" />
+      {/* Right eye (behind monocle, tracking mouse) */}
       <rect x="8.6" y="3.1" width="1.4" height="0.9" fill="rgba(255,255,255,0.8)" />
       <rect x={8.8 + eyeOffsetX * 0.5} y="3.2" width="0.7" height="0.7" fill="#FF2E97" />
       {/* Mouth */}
@@ -251,13 +253,14 @@ function PeekingHead({ side, onDone }: { side: "right" | "left" | "bottom"; onDo
         <rect x="2" y="1" width="0.8" height="0.3" fill="#333" />
         <rect x="2.5" y="1.2" width="9" height="4" fill="#6B4226" />
         <rect x="3.5" y="5.2" width="7" height="1" fill="#6B4226" />
-        {/* Visor */}
-        <rect x="2.5" y="2.3" width="9" height="2" fill="rgba(0, 240, 255, 0.12)" stroke="#00F0FF" strokeWidth="0.3" rx="0.3" />
-        <rect x="2.5" y="3.2" width="9" height="0.15" fill="#00F0FF" opacity="0.4" />
+        {/* One-eye monocle (right eye) */}
+        <rect x="7.8" y="2.3" width="3.8" height="2.2" fill="rgba(0, 240, 255, 0.12)" stroke="#00F0FF" strokeWidth="0.35" rx="0.3" />
+        <rect x="7.8" y="3.3" width="3.8" height="0.15" fill="#00F0FF" opacity="0.4" />
+        <rect x="6.5" y="3.2" width="1.3" height="0.3" fill="#00F0FF" opacity="0.4" />
         {/* Eyes */}
         <motion.g animate={{ x: [0, 0.4, -0.4, 0] }} transition={{ duration: 2, repeat: Infinity }}>
-          <rect x="3.5" y="2.9" width="1.8" height="1.2" fill="rgba(255,255,255,0.7)" />
-          <rect x="4.1" y="3.1" width="0.9" height="0.9" fill="#FF2E97" />
+          <rect x="3.5" y="2.9" width="1.8" height="1.2" fill="#FFF" />
+          <rect x="4.1" y="3.1" width="0.9" height="0.9" fill="#1A1A1A" />
           <rect x="8.5" y="2.9" width="1.8" height="1.2" fill="rgba(255,255,255,0.7)" />
           <rect x="9.1" y="3.1" width="0.9" height="0.9" fill="#FF2E97" />
         </motion.g>

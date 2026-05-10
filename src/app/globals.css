@@ -102,7 +102,7 @@ a {
 }
 
 /* ============================================
-   Glitch Effect
+   Glitch Effect (banner — always on)
    ============================================ */
 @keyframes glitch-1 {
   0%, 100% { clip-path: inset(0 0 88% 0); transform: translate(-2px, 0); }
@@ -156,6 +156,47 @@ a {
 }
 
 /* ============================================
+   Project name glitch on hover (replaces scroll)
+   ============================================ */
+.project-name {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.project-name::before,
+.project-name::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.project-name::before {
+  color: var(--accent);
+}
+
+.project-name::after {
+  color: var(--retro);
+}
+
+.project-item:hover .project-name::before {
+  opacity: 0.7;
+  animation: glitch-1 0.4s linear infinite;
+}
+
+.project-item:hover .project-name::after {
+  opacity: 0.7;
+  animation: glitch-2 0.4s linear infinite;
+  animation-delay: 0.05s;
+}
+
+/* ============================================
    Neon border glow
    ============================================ */
 .neon-border {
@@ -172,33 +213,6 @@ a {
 [data-theme="light"] .neon-border {
   border: 1px solid rgba(0, 136, 170, 0.15);
   box-shadow: var(--neon-glow);
-}
-
-/* ============================================
-   Project Name Scroll on Hover
-   ============================================ */
-@keyframes nameScroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-25%); }
-}
-
-.project-name-track {
-  display: flex;
-  gap: 3rem;
-  white-space: nowrap;
-}
-
-.project-item:hover .project-name-track {
-  animation: nameScroll 3s linear infinite;
-}
-
-.project-name-track .project-name-dup {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.project-item:hover .project-name-track .project-name-dup {
-  opacity: 1;
 }
 
 /* Project list dim effect */

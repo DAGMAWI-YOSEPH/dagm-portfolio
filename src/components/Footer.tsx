@@ -1,7 +1,7 @@
 export function Footer() {
   return (
     <footer
-      className="mt-32 py-8 w-full"
+      className="mt-16 sm:mt-32 py-6 sm:py-8 w-full"
       style={{ borderTop: "1px solid rgba(0, 240, 255, 0.1)" }}
     >
       <div className="px-8 lg:px-16 flex justify-between items-end flex-wrap gap-4">

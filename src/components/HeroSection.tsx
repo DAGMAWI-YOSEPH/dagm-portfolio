@@ -5,7 +5,7 @@ import { FallingObjects } from "./FallingObjects";
 
 export function HeroSection() {
   return (
-    <header className="min-h-[65vh] flex items-end pt-24 pb-16 relative cyber-grid">
+    <header className="min-h-[65vh] flex items-end pt-12 pb-8 sm:pt-24 sm:pb-16 relative cyber-grid">
       <FallingObjects />
 
       <div className="w-full relative" style={{ zIndex: 5 }}>

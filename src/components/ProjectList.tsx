@@ -99,24 +99,20 @@ export function ProjectList() {
                 {project.number}
               </span>
 
-              {/* Name with marquee track */}
+              {/* Name with glitch on hover */}
               <div className="overflow-hidden">
-                <div className="project-name-track">
-                  {[0, 1, 2, 3].map((j) => (
-                    <span
-                      key={j}
-                      className={`flex-shrink-0 ${j > 0 ? "project-name-dup" : ""}`}
-                      style={{
-                        fontFamily: "var(--font-display), var(--font-grotesk), sans-serif",
-                        fontSize: "clamp(1.3rem, 3.2vw, 2.2rem)",
-                        fontWeight: 700,
-                        letterSpacing: "0.03em",
-                      }}
-                    >
-                      {project.name}
-                    </span>
-                  ))}
-                </div>
+                <span
+                  className="project-name"
+                  data-text={project.name}
+                  style={{
+                    fontFamily: "var(--font-display), var(--font-grotesk), sans-serif",
+                    fontSize: "clamp(1.3rem, 3.2vw, 2.2rem)",
+                    fontWeight: 700,
+                    letterSpacing: "0.03em",
+                  }}
+                >
+                  {project.name}
+                </span>
               </div>
 
               {/* Right: status badge OR year (not both for ongoing) */}
