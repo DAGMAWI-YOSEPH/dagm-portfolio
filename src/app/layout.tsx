@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Space_Mono } from "next/font/google";
+import { Space_Grotesk, Space_Mono, Orbitron } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -18,6 +18,12 @@ const spaceMono = Space_Mono({
   weight: ["400", "700"],
 });
 
+const orbitron = Orbitron({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
 export const metadata: Metadata = {
   title: "Dagm. Y — Freelance WordPress Developer",
   description:
@@ -32,7 +38,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${spaceMono.variable}`}
+      className={`${spaceGrotesk.variable} ${spaceMono.variable} ${orbitron.variable}`}
       suppressHydrationWarning
     >
       <body

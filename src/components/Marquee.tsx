@@ -14,7 +14,7 @@ export function Marquee() {
             key={i}
             className="flex-shrink-0 pr-10 select-none"
             style={{
-              fontFamily: "var(--font-mono), monospace",
+              fontFamily: "var(--font-display), var(--font-grotesk), sans-serif",
               fontSize: "clamp(1.8rem, 4.5vw, 3.5rem)",
               fontWeight: 700,
               textTransform: "uppercase",

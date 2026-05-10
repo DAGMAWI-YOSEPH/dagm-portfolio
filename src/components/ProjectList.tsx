@@ -106,10 +106,10 @@ export function ProjectList() {
                       key={j}
                       className={`flex-shrink-0 ${j > 0 ? "project-name-dup" : ""}`}
                       style={{
-                        fontFamily: "var(--font-grotesk), sans-serif",
+                        fontFamily: "var(--font-display), var(--font-grotesk), sans-serif",
                         fontSize: "clamp(1.3rem, 3.2vw, 2.2rem)",
                         fontWeight: 700,
-                        letterSpacing: "-0.02em",
+                        letterSpacing: "0.03em",
                       }}
                     >
                       {project.name}

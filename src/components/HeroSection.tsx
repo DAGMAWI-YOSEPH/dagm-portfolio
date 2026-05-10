@@ -14,11 +14,11 @@ export function HeroSection() {
             <h1
               className="whitespace-nowrap"
               style={{
-                fontFamily: "var(--font-grotesk), sans-serif",
+                fontFamily: "var(--font-display), var(--font-grotesk), sans-serif",
                 fontSize: "clamp(3rem, 16vw, 15rem)",
-                fontWeight: 400,
+                fontWeight: 900,
                 lineHeight: 0.9,
-                letterSpacing: "0.02em",
+                letterSpacing: "0.04em",
                 textTransform: "uppercase",
               }}
             >
