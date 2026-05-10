@@ -34,7 +34,7 @@ export function Marquee() {
             data-text="SELECTED WORKS"
             style={{
               fontFamily: "var(--font-display), var(--font-grotesk), sans-serif",
-              fontSize: "clamp(1.6rem, 6vw, 5rem)",
+              fontSize: "clamp(1.3rem, 5.5vw, 5rem)",
               fontWeight: 900,
               letterSpacing: "0.08em",
               textTransform: "uppercase",

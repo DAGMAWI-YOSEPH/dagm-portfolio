@@ -5,7 +5,7 @@ import { FallingObjects } from "./FallingObjects";
 
 export function HeroSection() {
   return (
-    <header className="min-h-[65vh] flex items-end pt-12 pb-8 sm:pt-24 sm:pb-16 relative cyber-grid">
+    <header className="min-h-[50vh] sm:min-h-[65vh] flex items-end pt-6 pb-4 sm:pt-16 sm:pb-10 relative cyber-grid">
       <FallingObjects />
 
       <div className="w-full relative" style={{ zIndex: 5 }}>
@@ -43,7 +43,7 @@ export function HeroSection() {
           </p>
         </DropIn>
 
-        <DropIn delay={0.4} className="mt-12">
+        <DropIn delay={0.4} className="mt-6 sm:mt-12">
           <div className="flex justify-between items-start flex-wrap gap-4">
             <span
               className="text-xs tracking-[0.12em] uppercase"

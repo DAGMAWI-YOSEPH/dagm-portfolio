@@ -77,36 +77,34 @@ export function ProjectList() {
           >
             <Tag
               {...linkProps}
-              className="project-item grid items-center py-5 cursor-pointer group"
+              className="project-item flex items-center justify-between gap-4 py-4 sm:py-5 cursor-pointer group"
               style={{
-                gridTemplateColumns: "3.5rem 1fr auto",
                 borderBottom: "1px solid rgba(0, 240, 255, 0.06)",
                 transition: "all 0.3s ease",
                 ...(i === 0 ? { borderTop: "1px solid rgba(0, 240, 255, 0.06)" } : {}),
               }}
             >
-              {/* Number — retro pixel style */}
-              <span
-                className="font-bold tracking-widest"
-                style={{
-                  fontFamily: "var(--font-mono), monospace",
-                  fontSize: "0.7rem",
-                  color: "var(--accent)",
-                  fontVariantNumeric: "tabular-nums",
-                  textShadow: "0 0 8px rgba(0, 240, 255, 0.3)",
-                }}
-              >
-                {project.number}
-              </span>
-
-              {/* Name with glitch on hover */}
-              <div className="overflow-hidden">
+              {/* Left: number + name */}
+              <div className="flex items-center gap-3 min-w-0">
                 <span
-                  className="project-name"
+                  className="font-bold tracking-widest flex-shrink-0"
+                  style={{
+                    fontFamily: "var(--font-mono), monospace",
+                    fontSize: "0.7rem",
+                    color: "var(--accent)",
+                    fontVariantNumeric: "tabular-nums",
+                    textShadow: "0 0 8px rgba(0, 240, 255, 0.3)",
+                  }}
+                >
+                  {project.number}
+                </span>
+
+                <span
+                  className="project-name truncate"
                   data-text={project.name}
                   style={{
                     fontFamily: "var(--font-display), var(--font-grotesk), sans-serif",
-                    fontSize: "clamp(1.3rem, 3.2vw, 2.2rem)",
+                    fontSize: "clamp(1.1rem, 3vw, 2.2rem)",
                     fontWeight: 700,
                     letterSpacing: "0.03em",
                   }}
@@ -115,23 +113,24 @@ export function ProjectList() {
                 </span>
               </div>
 
-              {/* Right: status badge OR year (not both for ongoing) */}
-              <div className="flex items-center gap-4 justify-self-end">
+              {/* Right: status badge OR year */}
+              <div className="flex items-center gap-3 flex-shrink-0">
                 {project.status ? (
                   <span
-                    className="text-[0.6rem] uppercase tracking-[0.15em] px-3 py-1 font-bold"
+                    className="text-[0.55rem] sm:text-[0.6rem] uppercase tracking-[0.12em] px-2 sm:px-3 py-1 font-bold"
                     style={{
                       fontFamily: "var(--font-mono), monospace",
                       color: "var(--retro)",
                       border: "1px solid var(--retro)",
                       background: "var(--retro-glow)",
+                      whiteSpace: "nowrap",
                     }}
                   >
                     {project.status}
                   </span>
                 ) : (
                   <span
-                    className="text-sm tracking-wide font-bold"
+                    className="text-xs sm:text-sm tracking-wide font-bold"
                     style={{
                       fontFamily: "var(--font-mono), monospace",
                       color: "var(--text-dim)",
@@ -143,13 +142,11 @@ export function ProjectList() {
                   </span>
                 )}
 
-                {/* Retro arrow */}
                 <span
-                  className="opacity-0 group-hover:opacity-100 transition-all duration-300 text-lg"
+                  className="opacity-0 group-hover:opacity-100 transition-all duration-300 text-lg hidden sm:inline"
                   style={{
                     fontFamily: "var(--font-mono), monospace",
                     color: "var(--retro)",
-                    transform: "translateX(-5px)",
                   }}
                 >
                   {">"}
